@@ -7,6 +7,8 @@ var chatServer = require('./lib/chat_server.js')
 
 // helper functions to server static HTTP files.
 // handle the sending of 404 errors
+
+module.exports = function () {
 function send404(response) {
   response.writeHead(404, {'Content-Type': 'text/plain'});
   response.write('Error 404: resource not found');
@@ -46,6 +48,7 @@ function serveStatic(response, cache, absPath) {
 }
 
 // create the HTTP server
+// module.exports = function () {
 var server = http.createServer(function(request, response) {
   var filePath = false;
 
@@ -59,9 +62,13 @@ var server = http.createServer(function(request, response) {
 });
 
 // start the HTTP server
+
 server.listen(3000, function() {
   console.log("Server listening on port 3000");
 });
 
 // opens a channel for the chat server to listen to the server (socket IO)
 chatServer.listen(server)
+
+return server
+}
