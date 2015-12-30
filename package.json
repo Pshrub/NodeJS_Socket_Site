@@ -2,15 +2,19 @@
   "name": "chatrooms",
   "version": "0.0.1",
   "description": "minimally functional chat server",
+  "homepage": "https://github.com/Pshrub/NodeJS_Socket_Site",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Pshrub/NodeJS_Socket_Site.git"
+  },
   "dependencies": {
-    "socket.io": "~0.9.6",
-    "mime": "~1.2.7",
-    "mocha": "~2.2.4",   
-    "superagent": "1.2.0"
+    "expect": "^1.13.4",
+    "mime": "^1.2.7",
+    "mocha": "^2.2.4",
+    "socket.io": "^0.9.6",
+    "superagent": "^1.2.0"
   },
   "scripts": {
     "test": "mocha test.js"
   }
-
-
 }

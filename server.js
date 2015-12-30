@@ -8,7 +8,7 @@ var chatServer = require('./lib/chat_server.js')
 // helper functions to server static HTTP files.
 // handle the sending of 404 errors
 
-module.exports = function () {
+function webserver() {
 function send404(response) {
   response.writeHead(404, {'Content-Type': 'text/plain'});
   response.write('Error 404: resource not found');
@@ -48,7 +48,6 @@ function serveStatic(response, cache, absPath) {
 }
 
 // create the HTTP server
-// module.exports = function () {
 var server = http.createServer(function(request, response) {
   var filePath = false;
 
@@ -72,3 +71,6 @@ chatServer.listen(server)
 
 return server
 }
+
+module.exports = webserver;
+webserver();

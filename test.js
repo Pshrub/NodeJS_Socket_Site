@@ -1,6 +1,7 @@
 // put tests for the server.js file here
 var server = require('./server');
 var assert = require('assert');
+var expect = require('expect');
 var superagent = require('superagent');
 
 // test going to the main site page returns an HTTP status code of 200
@@ -23,6 +24,22 @@ describe('serv', function() {
       done();
     });
   });
+
+  it("tests the expect library", function () {
+      expect(true).toBe(true);
+  });
+
+/*
+  it("returns a status of 404 when calling the send404 helper function", function (done) {
+    superagent.get('http://localhost:3000/blah', function (error, res) {
+      //assert.ifError(error);
+      //assert.equal(res.status, 404);
+      //done();
+      expect(server().send404(res).toEqual('Error 404: resource not found'));
+      done();
+    });
+  });
+
 /*
   it('prints out "Page for user USERNAME with option undefined" when user goes to /user/USERNAME', function (done) {
     superagent.get('http://localhost:3000/user/USERNAME', function (error, res) {
